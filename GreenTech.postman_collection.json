@@ -1,0 +1,3640 @@
+{
+	"info": {
+		"_postman_id": "92ca5b0a-631d-4797-98b8-87e336e88047",
+		"name": "GreenTech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2154849"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Wildney Brasil",
+									"description": "Nome do Usuário",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "wbrasilsousa@gmail.com",
+									"description": "E-mail / Login",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "secret1234",
+									"description": "Senha de Acesso",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "secret1234",
+									"description": "Confirmação de Senha",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/auth/register",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						},
+						"description": "Registro de Usuário."
+					},
+					"response": [
+						{
+							"name": "Sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Wildney Brasil",
+											"description": "Nome do Usuário",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "wbrasilsousa@gmail.com",
+											"description": "E-mail / Login",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "secret",
+											"description": "Senha de Acesso",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 14:58:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"success\": true,\n    \"data\": {\n        \"user\": {\n            \"name\": \"Wildney Brasil\",\n            \"email\": \"wbrasilsousa@gmail.com\",\n            \"created_at\": \"05/11/2020 14:58:04\",\n            \"id\": 1\n        }\n    }\n}"
+						},
+						{
+							"name": "Erro - Validação (Campos obrigatórios)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Wildney Brasil",
+											"description": "Nome do Usuário",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "wbrasilsousa@gmail.com",
+											"description": "E-mail / Login",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "secret",
+											"description": "Senha de Acesso",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:01:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 422,\n    \"success\": false,\n    \"error\": {\n        \"code\": 422,\n        \"message\": \"Ocorreu um erro de validação\",\n        \"errors\": {\n            \"name\": [\n                \"O campo Nome é obrigatório.\"\n            ],\n            \"email\": [\n                \"O campo E-mail é obrigatório.\"\n            ],\n            \"password\": [\n                \"O campo Senha é obrigatório.\"\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.collectionVariables.set('token', jsonData.access_token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "wbrasilsousa@gmail.com",
+									"description": "E-mail / Login",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "secret1234",
+									"description": "Senha de Acesso",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/auth/login",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Efetua o login"
+					},
+					"response": [
+						{
+							"name": "Erro - Credenciais inválidas",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "teste@teste.com",
+											"description": "E-mail / Login",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "teste",
+											"description": "Senha de Acesso",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/login",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:43:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 422,\n    \"success\": false,\n    \"error\": {\n        \"code\": 422,\n        \"message\": \"Ocorreu um erro de validação\",\n        \"errors\": [\n            {\n                \"fieldname\": \"password\",\n                \"message\": \"Usuário ou senha inválidos\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "wbrasilsousa@gmail.com",
+											"description": "E-mail / Login",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "secret",
+											"description": "Senha de Acesso",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/login",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:47:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"data\": {\n        \"token\": {\n            \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hbHVub3MubG9jYWxob3N0XC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNjA0NTkxMjcxLCJleHAiOjE2MDQ1OTQ4NzEsIm5iZiI6MTYwNDU5MTI3MSwianRpIjoicW5yWVpMNnlFbTljR2NTOCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.iRgWVrmTQBnr2NDe3rXl0MSgS4nA58BGg8HHVQd83Ow\",\n            \"token_type\": \"bearer\",\n            \"expires_in\": 3600\n        }\n    }\n}"
+						},
+						{
+							"name": "Erro - Validação (Campos obrigatórios)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "teste@teste.com",
+											"description": "E-mail / Login",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "teste",
+											"description": "Senha de Acesso",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/login",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:40:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 422,\n    \"success\": false,\n    \"error\": {\n        \"code\": 422,\n        \"message\": \"Ocorreu um erro de validação\",\n        \"errors\": {\n            \"email\": [\n                \"O campo E-mail é obrigatório.\"\n            ],\n            \"password\": [\n                \"O campo Senha é obrigatório.\"\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"description": "Access Token (Bearer)",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/auth/logout",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						},
+						"description": "Desloga o usuário atual\n\n"
+					},
+					"response": [
+						{
+							"name": "Sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"description": "Access Token (Bearer)",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/auth/logout",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 16:05:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"data\": null,\n    \"message\": \"Logout efetuado com sucesso!\"\n}"
+						},
+						{
+							"name": "Erro - Autenticação",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"description": "Access Token (Bearer)",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/auth/logout",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 19:17:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=99"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"success\": false,\n    \"error\": {\n        \"code\": 401,\n        \"message\": \"Acesso negado\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"pm.collectionVariables.set('token', jsonData.access_token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"description": "Access token",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/auth/refresh",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"auth",
+								"refresh"
+							]
+						},
+						"description": "Gera um novo token desde que esteja dentro do prazo máximo de 5 min"
+					},
+					"response": [
+						{
+							"name": "Sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"description": "Access token",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/refresh",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"refresh"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 18:58:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=99"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"data\": {\n        \"token\": {\n            \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hbHVub3MubG9jYWxob3N0XC9hcGlcL2F1dGhcL3JlZnJlc2giLCJpYXQiOjE2MDQ2MDI3MjksImV4cCI6MTYwNDYwNjMzNCwibmJmIjoxNjA0NjAyNzM0LCJqdGkiOiJCTW45MU9SSU81MVdLT1h3Iiwic3ViIjoxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.S8iqKJPDsXq8Xq6dJBJhdLnsHlCFv6TKZLrUijBhRPA\",\n            \"token_type\": \"bearer\",\n            \"expires_in\": 3600\n        }\n    }\n}"
+						},
+						{
+							"name": "Erro - Autenticação",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"description": "Access token",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/refresh",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"refresh"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 18:58:31 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"success\": false,\n    \"error\": {\n        \"code\": 401,\n        \"message\": \"Acesso negado\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Me",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"description": "Access Token (Bearer)",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}api/auth/me",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						},
+						"description": "Retorna os dados do usuário logado"
+					},
+					"response": [
+						{
+							"name": "Erro - Autenticação",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer ",
+										"description": "Access Token (Bearer)",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}api/auth/me",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"me"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 16:00:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"success\": false,\n    \"error\": {\n        \"code\": 401,\n        \"message\": \"Acesso negado\"\n    }\n}"
+						},
+						{
+							"name": "Sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"description": "Access Token (Bearer)",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}api/auth/me",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:56:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Wildney Brasil\",\n            \"email\": \"wbrasilsousa@gmail.com\",\n            \"created_at\": \"05/11/2020 14:58:04\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Suppliers",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome",
+									"value": "Wildney Brasil",
+									"type": "text"
+								},
+								{
+									"key": "telefone",
+									"value": "11940516779",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "wbrasilsousa@gmail.com.br",
+									"type": "text"
+								},
+								{
+									"key": "cep",
+									"value": "01001-000",
+									"type": "text"
+								},
+								{
+									"key": "logradouro",
+									"value": "Praça da Sé",
+									"type": "text"
+								},
+								{
+									"key": "complemento",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bairro",
+									"value": "Sé",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "São Paulo",
+									"type": "text"
+								},
+								{
+									"key": "uf",
+									"value": "SP",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/suppliers/register",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"suppliers",
+								"register"
+							]
+						},
+						"description": "Registro de Usuário."
+					},
+					"response": [
+						{
+							"name": "Sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Wildney Brasil",
+											"description": "Nome do Usuário",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "wbrasilsousa@gmail.com",
+											"description": "E-mail / Login",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "secret",
+											"description": "Senha de Acesso",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 14:58:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"success\": true,\n    \"data\": {\n        \"user\": {\n            \"name\": \"Wildney Brasil\",\n            \"email\": \"wbrasilsousa@gmail.com\",\n            \"created_at\": \"05/11/2020 14:58:04\",\n            \"id\": 1\n        }\n    }\n}"
+						},
+						{
+							"name": "Erro - Validação (Campos obrigatórios)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Wildney Brasil",
+											"description": "Nome do Usuário",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "wbrasilsousa@gmail.com",
+											"description": "E-mail / Login",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "secret",
+											"description": "Senha de Acesso",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:01:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 422,\n    \"success\": false,\n    \"error\": {\n        \"code\": 422,\n        \"message\": \"Ocorreu um erro de validação\",\n        \"errors\": {\n            \"name\": [\n                \"O campo Nome é obrigatório.\"\n            ],\n            \"email\": [\n                \"O campo E-mail é obrigatório.\"\n            ],\n            \"password\": [\n                \"O campo Senha é obrigatório.\"\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nome",
+									"value": "Caixas Pretas",
+									"type": "text"
+								},
+								{
+									"key": "telefone",
+									"value": "11940516779",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "wbrasilsousa@gmail.com.br",
+									"type": "text"
+								},
+								{
+									"key": "cep",
+									"value": "01001-000",
+									"type": "text"
+								},
+								{
+									"key": "logradouro",
+									"value": "Praça da Sé",
+									"type": "text"
+								},
+								{
+									"key": "complemento",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bairro",
+									"value": "Sé",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "São Paulo",
+									"type": "text"
+								},
+								{
+									"key": "uf",
+									"value": "SP",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/suppliers/update/3",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"suppliers",
+								"update",
+								"3"
+							]
+						},
+						"description": "Registro de Usuário."
+					},
+					"response": [
+						{
+							"name": "Sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Wildney Brasil",
+											"description": "Nome do Usuário",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "wbrasilsousa@gmail.com",
+											"description": "E-mail / Login",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "secret",
+											"description": "Senha de Acesso",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 14:58:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"success\": true,\n    \"data\": {\n        \"user\": {\n            \"name\": \"Wildney Brasil\",\n            \"email\": \"wbrasilsousa@gmail.com\",\n            \"created_at\": \"05/11/2020 14:58:04\",\n            \"id\": 1\n        }\n    }\n}"
+						},
+						{
+							"name": "Erro - Validação (Campos obrigatórios)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Wildney Brasil",
+											"description": "Nome do Usuário",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "wbrasilsousa@gmail.com",
+											"description": "E-mail / Login",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "secret",
+											"description": "Senha de Acesso",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:01:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 422,\n    \"success\": false,\n    \"error\": {\n        \"code\": 422,\n        \"message\": \"Ocorreu um erro de validação\",\n        \"errors\": {\n            \"name\": [\n                \"O campo Nome é obrigatório.\"\n            ],\n            \"email\": [\n                \"O campo E-mail é obrigatório.\"\n            ],\n            \"password\": [\n                \"O campo Senha é obrigatório.\"\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}api/suppliers/get",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"suppliers",
+								"get"
+							]
+						},
+						"description": "Efetua o login"
+					},
+					"response": [
+						{
+							"name": "Erro - Credenciais inválidas",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "teste@teste.com",
+											"description": "E-mail / Login",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "teste",
+											"description": "Senha de Acesso",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/login",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:43:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 422,\n    \"success\": false,\n    \"error\": {\n        \"code\": 422,\n        \"message\": \"Ocorreu um erro de validação\",\n        \"errors\": [\n            {\n                \"fieldname\": \"password\",\n                \"message\": \"Usuário ou senha inválidos\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "wbrasilsousa@gmail.com",
+											"description": "E-mail / Login",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "secret",
+											"description": "Senha de Acesso",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/login",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:47:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"data\": {\n        \"token\": {\n            \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hbHVub3MubG9jYWxob3N0XC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNjA0NTkxMjcxLCJleHAiOjE2MDQ1OTQ4NzEsIm5iZiI6MTYwNDU5MTI3MSwianRpIjoicW5yWVpMNnlFbTljR2NTOCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.iRgWVrmTQBnr2NDe3rXl0MSgS4nA58BGg8HHVQd83Ow\",\n            \"token_type\": \"bearer\",\n            \"expires_in\": 3600\n        }\n    }\n}"
+						},
+						{
+							"name": "Erro - Validação (Campos obrigatórios)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "teste@teste.com",
+											"description": "E-mail / Login",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "teste",
+											"description": "Senha de Acesso",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/login",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:40:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 422,\n    \"success\": false,\n    \"error\": {\n        \"code\": 422,\n        \"message\": \"Ocorreu um erro de validação\",\n        \"errors\": {\n            \"email\": [\n                \"O campo E-mail é obrigatório.\"\n            ],\n            \"password\": [\n                \"O campo Senha é obrigatório.\"\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"description": "Access Token (Bearer)",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/suppliers/delete/3",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"suppliers",
+								"delete",
+								"3"
+							]
+						},
+						"description": "Desloga o usuário atual\n\n"
+					},
+					"response": [
+						{
+							"name": "Sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"description": "Access Token (Bearer)",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/auth/logout",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 16:05:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"data\": null,\n    \"message\": \"Logout efetuado com sucesso!\"\n}"
+						},
+						{
+							"name": "Erro - Autenticação",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"description": "Access Token (Bearer)",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/auth/logout",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 19:17:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=99"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"success\": false,\n    \"error\": {\n        \"code\": 401,\n        \"message\": \"Acesso negado\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "Teste",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "Caixa",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Caixa colorida",
+									"type": "text"
+								},
+								{
+									"key": "preco",
+									"value": "12.50",
+									"type": "text"
+								},
+								{
+									"key": "categoria",
+									"value": "Caixas",
+									"type": "text"
+								},
+								{
+									"key": "quantidade",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "fornecedor_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/products/register",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"products",
+								"register"
+							]
+						},
+						"description": "Registro de Usuário."
+					},
+					"response": [
+						{
+							"name": "Sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Wildney Brasil",
+											"description": "Nome do Usuário",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "wbrasilsousa@gmail.com",
+											"description": "E-mail / Login",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "secret",
+											"description": "Senha de Acesso",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 14:58:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"success\": true,\n    \"data\": {\n        \"user\": {\n            \"name\": \"Wildney Brasil\",\n            \"email\": \"wbrasilsousa@gmail.com\",\n            \"created_at\": \"05/11/2020 14:58:04\",\n            \"id\": 1\n        }\n    }\n}"
+						},
+						{
+							"name": "Erro - Validação (Campos obrigatórios)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Wildney Brasil",
+											"description": "Nome do Usuário",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "wbrasilsousa@gmail.com",
+											"description": "E-mail / Login",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "secret",
+											"description": "Senha de Acesso",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:01:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 422,\n    \"success\": false,\n    \"error\": {\n        \"code\": 422,\n        \"message\": \"Ocorreu um erro de validação\",\n        \"errors\": {\n            \"name\": [\n                \"O campo Nome é obrigatório.\"\n            ],\n            \"email\": [\n                \"O campo E-mail é obrigatório.\"\n            ],\n            \"password\": [\n                \"O campo Senha é obrigatório.\"\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigo",
+									"value": "1111111",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "Caixa",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Caixa colorida",
+									"type": "text"
+								},
+								{
+									"key": "preco",
+									"value": "12.50",
+									"type": "text"
+								},
+								{
+									"key": "categoria",
+									"value": "Caixas",
+									"type": "text"
+								},
+								{
+									"key": "quantidade",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "fornecedor_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}api/products/update/8",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"products",
+								"update",
+								"8"
+							]
+						},
+						"description": "Registro de Usuário."
+					},
+					"response": [
+						{
+							"name": "Sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Wildney Brasil",
+											"description": "Nome do Usuário",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "wbrasilsousa@gmail.com",
+											"description": "E-mail / Login",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "secret",
+											"description": "Senha de Acesso",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 14:58:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"success\": true,\n    \"data\": {\n        \"user\": {\n            \"name\": \"Wildney Brasil\",\n            \"email\": \"wbrasilsousa@gmail.com\",\n            \"created_at\": \"05/11/2020 14:58:04\",\n            \"id\": 1\n        }\n    }\n}"
+						},
+						{
+							"name": "Erro - Validação (Campos obrigatórios)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Wildney Brasil",
+											"description": "Nome do Usuário",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "wbrasilsousa@gmail.com",
+											"description": "E-mail / Login",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "secret",
+											"description": "Senha de Acesso",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/register",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:01:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 422,\n    \"success\": false,\n    \"error\": {\n        \"code\": 422,\n        \"message\": \"Ocorreu um erro de validação\",\n        \"errors\": {\n            \"name\": [\n                \"O campo Nome é obrigatório.\"\n            ],\n            \"email\": [\n                \"O campo E-mail é obrigatório.\"\n            ],\n            \"password\": [\n                \"O campo Senha é obrigatório.\"\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}api/products/get/",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"products",
+								"get",
+								""
+							]
+						},
+						"description": "Efetua o login"
+					},
+					"response": [
+						{
+							"name": "Erro - Credenciais inválidas",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "teste@teste.com",
+											"description": "E-mail / Login",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "teste",
+											"description": "Senha de Acesso",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/login",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:43:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 422,\n    \"success\": false,\n    \"error\": {\n        \"code\": 422,\n        \"message\": \"Ocorreu um erro de validação\",\n        \"errors\": [\n            {\n                \"fieldname\": \"password\",\n                \"message\": \"Usuário ou senha inválidos\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "wbrasilsousa@gmail.com",
+											"description": "E-mail / Login",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "secret",
+											"description": "Senha de Acesso",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/login",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:47:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"data\": {\n        \"token\": {\n            \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hbHVub3MubG9jYWxob3N0XC9hcGlcL2F1dGhcL2xvZ2luIiwiaWF0IjoxNjA0NTkxMjcxLCJleHAiOjE2MDQ1OTQ4NzEsIm5iZiI6MTYwNDU5MTI3MSwianRpIjoicW5yWVpMNnlFbTljR2NTOCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.iRgWVrmTQBnr2NDe3rXl0MSgS4nA58BGg8HHVQd83Ow\",\n            \"token_type\": \"bearer\",\n            \"expires_in\": 3600\n        }\n    }\n}"
+						},
+						{
+							"name": "Erro - Validação (Campos obrigatórios)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "teste@teste.com",
+											"description": "E-mail / Login",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "teste",
+											"description": "Senha de Acesso",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}api/auth/login",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 15:40:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 422,\n    \"success\": false,\n    \"error\": {\n        \"code\": 422,\n        \"message\": \"Ocorreu um erro de validação\",\n        \"errors\": {\n            \"email\": [\n                \"O campo E-mail é obrigatório.\"\n            ],\n            \"password\": [\n                \"O campo Senha é obrigatório.\"\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"description": "Access Token (Bearer)",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}api/products/delete/8",
+							"host": [
+								"{{url}}api"
+							],
+							"path": [
+								"products",
+								"delete",
+								"8"
+							]
+						},
+						"description": "Desloga o usuário atual\n\n"
+					},
+					"response": [
+						{
+							"name": "Sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"description": "Access Token (Bearer)",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/auth/logout",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 16:05:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"data\": null,\n    \"message\": \"Logout efetuado com sucesso!\"\n}"
+						},
+						{
+							"name": "Erro - Autenticação",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"description": "Access Token (Bearer)",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}api/auth/logout",
+									"host": [
+										"{{url}}api"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Thu, 05 Nov 2020 19:17:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.29 (Ubuntu)"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=99"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 401,\n    \"success\": false,\n    \"error\": {\n        \"code\": 401,\n        \"message\": \"Acesso negado\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "alunos.localhost/"
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
