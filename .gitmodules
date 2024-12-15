@@ -1,0 +1,9 @@
+[submodule "lamp-with-laradock"]
+	path = lamp-with-laradock
+	url = git@github.com:wbrasilsousa/lamp-with-laradock.git
+[submodule "api-greentech"]
+	path = api-greentech
+	url = git@github.com:wbrasilsousa/api-greentech.git
+[submodule "front-greentech"]
+	path = front-greentech
+	url = git@github.com:wbrasilsousa/front-greentech.git
